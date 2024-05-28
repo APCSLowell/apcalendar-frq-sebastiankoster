@@ -23,8 +23,8 @@ public class APCalendar
    */
   private static int firstDayOfYear(int year)
   {
-    /* January 1, 1980 was a Tuesday */
-      return (2 + 365*(year - 1980) + numberOfLeapYears(1980, year-1)) % 7;
+      /* January 1, 1980 was a Tuesday */
+        return (2 + 365*(year - 1980 - numberOfLeapYears(1980, year-1)) + 364*numberOfLeapYears(1980, year-1)) % 7;
   }
 
   /** Returns n, where month, day, and year specify the nth day of the year.
